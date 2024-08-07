@@ -19,6 +19,7 @@ dependencies {
     compileOnly(libs.kotlin.gradle)
     compileOnly(libs.android.gradle)
     compileOnly(libs.compose.gradle)
+    compileOnly(libs.ksp.gradle)
 }
 
 gradlePlugin {
@@ -70,14 +71,6 @@ gradlePlugin {
         register("lemon.android.kotlin") {
             id = "lemon.android.kotlin"
             implementationClass = "io.lemon.android.buildSystem.plugin.KotlinPlugin"
-        }
-        register("lemon.android.log") {
-            id = "lemon.android.log"
-            implementationClass = "io.lemon.android.buildSystem.plugin.LogPlugin"
-        }
-        register("lemon.android.media") {
-            id = "lemon.android.media"
-            implementationClass = "io.lemon.android.buildSystem.plugin.MediaPlugin"
         }
     }
 }

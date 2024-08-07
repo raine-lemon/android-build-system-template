@@ -1,1 +1,0 @@
-# lemon-android-build-system-template

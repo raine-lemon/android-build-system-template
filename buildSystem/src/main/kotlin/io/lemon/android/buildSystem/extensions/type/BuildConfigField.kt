@@ -5,9 +5,9 @@ data class BuildConfigField(
     val name: String,
     val value: Any
 ) {
-    enum class Type(val field: kotlin.String = "") {
-        String(field = "String"),
-        Int(field = "int"),
-        Boolean(field = "boolean")
+    enum class Type(val field: String) {
+        StringType(field = "String"),
+        IntType(field = "int"),
+        BooleanType(field = "boolean")
     }
 }

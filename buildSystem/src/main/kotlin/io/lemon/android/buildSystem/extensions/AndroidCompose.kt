@@ -22,16 +22,10 @@ internal fun Project.extensionAndroidCompose(
             add("implementation", versionCatalog.findLibrary("androidx.compose.ui").get())
             add("implementation", versionCatalog.findLibrary("androidx.compose.ui-graphics").get())
             add("implementation", versionCatalog.findLibrary("androidx-compose-ui-tooling").get())
-            add(
-                "implementation",
-                versionCatalog.findLibrary("androidx-compose-ui-tooling-preview").get()
-            )
+            add("implementation", versionCatalog.findLibrary("androidx-compose-ui-tooling-preview").get())
             add("implementation", versionCatalog.findLibrary("androidx-compose-material").get())
             add("implementation", versionCatalog.findLibrary("androidx-compose-material3").get())
-            add(
-                "implementation",
-                versionCatalog.findLibrary("androidx-compose-material-icons-extended").get()
-            )
+            add("implementation", versionCatalog.findLibrary("androidx-compose-material-icons-extended").get())
         }
     }
 }
