@@ -10,6 +10,7 @@ class KotlinPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("org.jetbrains.kotlin.android")
+                apply("kotlin-parcelize")
                 apply("org.jetbrains.kotlin.plugin.serialization")
             }
             dependencies {
