@@ -25,7 +25,7 @@ object Config {
 
         enum class FlavorDimension { Version }
 
-        val FLAVOR_LIST = listOf(
+        val FLAVOR_LIST: List<FlavorType> = listOf(
             FlavorType(
                 name = "dev",
                 dimension = FlavorDimension.Version,

@@ -4,16 +4,18 @@ import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.ApplicationProductFlavor
 import com.android.build.api.dsl.CommonExtension
 import io.lemon.android.buildSystem.Config
-import io.lemon.android.buildSystem.Config.Flavor.FLAVOR_LIST
+import io.lemon.android.buildSystem.extensions.type.FlavorType
 
 
 fun configureFlavor(
-    commonExtension: CommonExtension<*, *, *, *, *>
+    commonExtension: CommonExtension<*, *, *, *, *>,
+    flavorList :List<FlavorType>,
+    flavorDimension : Config.Flavor.FlavorDimension
 ) {
     commonExtension.apply {
-        flavorDimensions += Config.Flavor.FlavorDimension.Version.name
+        flavorDimensions += flavorDimension.name
         productFlavors {
-            FLAVOR_LIST.forEach {
+            flavorList.forEach {
                 create(it.name) {
                     dimension = it.dimension.name
 
