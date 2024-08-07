@@ -10,12 +10,13 @@ class KotlinPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("org.jetbrains.kotlin.android")
+                apply("org.jetbrains.kotlin.plugin.serialization")
             }
-                dependencies {
-                    add("implementation", versionCatalog.findLibrary("kotlinx-coroutines").get())
-                    add("implementation", versionCatalog.findLibrary("kotlinx-datetime").get())
-                    add("implementation", versionCatalog.findLibrary("kotlinx-serialization-json").get())
-                }
+            dependencies {
+                add("implementation", versionCatalog.findLibrary("kotlinx-coroutines").get())
+                add("implementation", versionCatalog.findLibrary("kotlinx-datetime").get())
+                add("implementation", versionCatalog.findLibrary("kotlinx-serialization-json").get())
+            }
         }
     }
 }

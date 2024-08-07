@@ -9,7 +9,7 @@ class AndroidComposeExtPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-                apply("com.google.dagger.hilt.android")
+                apply("dagger.hilt.android.plugin")
                 apply("com.google.devtools.ksp")
             }
             dependencies {
@@ -17,7 +17,6 @@ class AndroidComposeExtPlugin : Plugin<Project> {
                     add("implementation", versionCatalog.findLibrary("accompanist-webview").get())
                     add("implementation", versionCatalog.findLibrary("accompanist-system-ui-controller").get())
                     add("implementation", versionCatalog.findLibrary("androidx-activity-compose").get())
-                    add("implementation", versionCatalog.findLibrary("androidx-constraintlayout-compose").get())
                     add("implementation", versionCatalog.findLibrary("androidx-hilt-navigation-compose").get())
                     add("implementation", versionCatalog.findLibrary("androidx-lifecycle-runtime-compose").get())
                     add("implementation", versionCatalog.findLibrary("androidx-lifecycle-viewmodel-compose").get())

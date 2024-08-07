@@ -15,6 +15,8 @@ class AndroidFeaturePlugin : Plugin<Project> {
                     add("implementation", versionCatalog.findLibrary("androidx-lifecycle-viewmodel-ktx").get())
                     add("implementation", versionCatalog.findLibrary("androidx-lifecycle-runtime-ktx").get())
                     add("implementation", versionCatalog.findLibrary("androidx-navigation-compose").get())
+                    add("implementation", versionCatalog.findLibrary("androidx-work").get())
+                    add("implementation", versionCatalog.findLibrary("androidx-work-ktx").get())
             }
         }
     }

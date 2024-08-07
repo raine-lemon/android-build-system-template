@@ -8,6 +8,7 @@ import io.lemon.android.buildSystem.Config.VERSION_CODE
 import io.lemon.android.buildSystem.Config.VERSION_NAME
 import io.lemon.android.buildSystem.Config.APPLICATION_ID
 import io.lemon.android.buildSystem.Config.JVM_TARGET
+import io.lemon.android.buildSystem.extensions.configureFlavor
 import io.lemon.android.buildSystem.extensions.extensionAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -33,6 +34,7 @@ class AndroidApplicationPlugin : Plugin<Project> {
             extensions.configure<ApplicationExtension> {
                 namespace = APPLICATION_ID
                 extensionAndroid(this)
+                configureFlavor(this)
                 defaultConfig {
                     applicationId = APPLICATION_ID
                     minSdk = MIN_SDK
@@ -41,6 +43,29 @@ class AndroidApplicationPlugin : Plugin<Project> {
                     versionCode = VERSION_CODE
                     versionName = VERSION_NAME
                     vectorDrawables.useSupportLibrary = true
+
+
+                    buildTypes {
+                        debug {
+                            isDebuggable = true
+                            isMinifyEnabled = false
+                            isShrinkResources = false
+                            proguardFiles(
+                                getDefaultProguardFile("proguard-android-optimize.txt"),
+                                "proguard-rules.pro"
+                            )
+                        }
+
+                        release {
+                            isDebuggable = false
+                            isMinifyEnabled = true
+                            isShrinkResources = true
+                            proguardFiles(
+                                getDefaultProguardFile("proguard-android-optimize.txt"),
+                                "proguard-rules.pro"
+                            )
+                        }
+                    }
                 }
             }
         }
