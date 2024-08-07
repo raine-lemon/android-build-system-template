@@ -7,11 +7,10 @@ java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
 }
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_17)
-        }
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_17)
     }
 }
 
@@ -63,10 +62,6 @@ gradlePlugin {
         register("lemon.android.hilt") {
             id = "lemon.android.hilt"
             implementationClass = "io.lemon.android.buildSystem.plugin.HiltPlugin"
-        }
-        register("lemon.android.image") {
-            id = "lemon.android.image"
-            implementationClass = "io.lemon.android.buildSystem.plugin.ImagePlugin"
         }
         register("lemon.android.kotlin") {
             id = "lemon.android.kotlin"
