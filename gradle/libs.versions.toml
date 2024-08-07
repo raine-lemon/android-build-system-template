@@ -60,7 +60,6 @@ lemon-android-datastore = { id = "lemon.android.datastore", version = "unspecifi
 lemon-android-network = { id = "lemon.android.network", version = "unspecified" }
 lemon-android-room = { id = "lemon.android.room", version = "unspecified" }
 lemon-android-hilt = { id = "lemon.android.hilt", version = "unspecified" }
-lemon-android-image = { id = "lemon.android.image", version = "unspecified" }
 lemon-android-kotlin = { id = "lemon.android.kotlin", version = "unspecified" }
 
 
@@ -123,7 +122,6 @@ media3-exoplayer = { group = "androidx.media3", name = "media3-exoplayer", versi
 media3-ui = { group = "androidx.media3", name = "media3-ui", version.ref = "media3" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
-retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 retrofit-converter-kotlin-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitConveterKotlinSerialization" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidxRoom" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidxRoom" }
