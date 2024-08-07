@@ -32,6 +32,7 @@ fun configureFlavor(
                             value = "${res.value}"
                         )
                     }
+                    addManifestPlaceholders(it.manifestPlaceholder)
 
                     if (this@apply is ApplicationExtension && this is ApplicationProductFlavor) {
                         if (it.suffix != null) applicationIdSuffix = it.suffix
