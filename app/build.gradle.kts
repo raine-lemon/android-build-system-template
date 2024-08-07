@@ -1,26 +1,13 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 plugins {
     alias(libs.plugins.lemon.android.application)
     alias(libs.plugins.lemon.android.application.compose)
-    alias(libs.plugins.lemon.android.kotlin)
     alias(libs.plugins.lemon.android.feature)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.lemon.android.compose.ext)
+    alias(libs.plugins.lemon.android.datastore)
+    alias(libs.plugins.lemon.android.network)
+    alias(libs.plugins.lemon.android.room)
+    alias(libs.plugins.lemon.android.hilt)
+    alias(libs.plugins.lemon.android.kotlin)
 }
-android {
-    buildFeatures {
-        viewBinding = true
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_17)
-        }
-    }
-}
+
+
