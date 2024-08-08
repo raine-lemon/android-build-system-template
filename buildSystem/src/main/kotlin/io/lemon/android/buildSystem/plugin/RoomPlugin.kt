@@ -11,6 +11,7 @@ class RoomPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.google.devtools.ksp")
             }
+
             dependencies {
                 add("ksp", versionCatalog.findLibrary("room.compiler").get())
                 add("implementation", versionCatalog.findLibrary("room.runtime").get())

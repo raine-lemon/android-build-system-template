@@ -8,6 +8,8 @@ import io.lemon.android.buildSystem.Config.TARGET_SDK
 import io.lemon.android.buildSystem.Config.VERSION_CODE
 import io.lemon.android.buildSystem.Config.VERSION_NAME
 import io.lemon.android.buildSystem.Config.APPLICATION_ID
+import io.lemon.android.buildSystem.Config.BuildType.DEBUG
+import io.lemon.android.buildSystem.Config.BuildType.RELEASE
 import io.lemon.android.buildSystem.extensions.configureFlavor
 import io.lemon.android.buildSystem.extensions.extensionAndroid
 import org.gradle.api.Plugin
@@ -29,8 +31,19 @@ class AndroidApplicationPlugin : Plugin<Project> {
                 configureFlavor(
                     commonExtension = this,
                     flavorList = Config.Flavor.FLAVOR_LIST,
-                    flavorDimension = Config.Flavor.FlavorDimension.Version
                 )
+
+                /**
+                 * Write your keystore store configs.
+                 */
+                signingConfigs {
+                    create(RELEASE) {
+                        //storeFile = file("../your_file_path")
+                        //storePassword = ""
+                        //keyAlias = ""
+                        //keyPassword = ""
+                    }
+                }
 
                 defaultConfig {
                     applicationId = APPLICATION_ID
@@ -41,19 +54,15 @@ class AndroidApplicationPlugin : Plugin<Project> {
                     versionName = VERSION_NAME
                     vectorDrawables.useSupportLibrary = true
 
-
                     buildTypes {
-                        debug {
+                        getByName(DEBUG) {
                             isDebuggable = true
                             isMinifyEnabled = false
                             isShrinkResources = false
-                            proguardFiles(
-                                getDefaultProguardFile("proguard-android-optimize.txt"),
-                                "proguard-rules.pro"
-                            )
                         }
 
-                        release {
+                        getByName(RELEASE) {
+                            signingConfig = signingConfigs.getByName(RELEASE)
                             isDebuggable = false
                             isMinifyEnabled = true
                             isShrinkResources = true

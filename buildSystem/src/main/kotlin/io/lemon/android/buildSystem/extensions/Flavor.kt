@@ -3,22 +3,21 @@ package io.lemon.android.buildSystem.extensions
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.ApplicationProductFlavor
 import com.android.build.api.dsl.CommonExtension
-import io.lemon.android.buildSystem.Config
 import io.lemon.android.buildSystem.extensions.type.FlavorType
 
 
 fun configureFlavor(
     commonExtension: CommonExtension<*, *, *, *, *>,
-    flavorList :List<FlavorType>,
-    flavorDimension : Config.Flavor.FlavorDimension
+    flavorList: List<FlavorType>,
 ) {
     commonExtension.apply {
-        flavorDimensions += flavorDimension.name
+        flavorDimensions += flavorList.map { it.dimension.name }.distinct()
         productFlavors {
             flavorList.forEach {
                 create(it.name) {
                     dimension = it.dimension.name
 
+                    // Set build config field
                     it.buildConfigField.forEach { field ->
                         buildConfigField(
                             type = field.type.field,
@@ -27,13 +26,16 @@ fun configureFlavor(
                         )
                     }
 
+                    // Set resource value field
                     it.resourceValue.forEach { res ->
                         resValue(
-                            type = res.type.toString(),
+                            type = res.type.field,
                             name = res.name,
                             value = "${res.value}"
                         )
                     }
+
+                    // Set manifest place holders
                     addManifestPlaceholders(it.manifestPlaceholder)
 
                     if (this@apply is ApplicationExtension && this is ApplicationProductFlavor) {

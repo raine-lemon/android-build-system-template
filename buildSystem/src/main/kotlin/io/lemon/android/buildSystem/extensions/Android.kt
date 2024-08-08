@@ -13,10 +13,9 @@ internal fun extensionAndroid(
             buildFeatures { buildConfig = true }
         }
 
-
         compileOptions {
-            sourceCompatibility = JAVA_VERSION
-            targetCompatibility = JAVA_VERSION
+            sourceCompatibility = JAVA_VERSION  // A Java version used in compile
+            targetCompatibility = JAVA_VERSION  // The lowest Java version that a android can run
         }
 
         packaging {

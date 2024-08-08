@@ -13,6 +13,7 @@ class HiltPlugin : Plugin<Project> {
                 apply("dagger.hilt.android.plugin")
                 apply("com.google.devtools.ksp")
             }
+
             dependencies {
                 add("ksp", versionCatalog.findLibrary("hilt.compiler").get())
                 add("ksp", versionCatalog.findLibrary("androidx-hilt-ext-compiler").get())

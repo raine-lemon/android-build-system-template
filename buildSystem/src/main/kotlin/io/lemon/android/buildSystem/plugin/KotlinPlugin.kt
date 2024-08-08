@@ -13,6 +13,7 @@ class KotlinPlugin : Plugin<Project> {
                 apply("kotlin-parcelize")
                 apply("org.jetbrains.kotlin.plugin.serialization")
             }
+
             dependencies {
                 add("implementation", versionCatalog.findLibrary("kotlinx-coroutines").get())
                 add("implementation", versionCatalog.findLibrary("kotlinx-datetime").get())

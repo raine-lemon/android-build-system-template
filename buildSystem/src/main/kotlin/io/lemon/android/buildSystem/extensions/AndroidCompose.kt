@@ -10,7 +10,6 @@ internal fun Project.extensionAndroidCompose(
 ) {
     commonExtension.apply {
 
-
         buildFeatures { compose = true }
 
         dependencies {
