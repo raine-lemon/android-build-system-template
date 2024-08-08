@@ -51,7 +51,7 @@ lemon-android-application-compose = { id = "lemon.android.application.compose", 
 lemon-android-compose-ext = { id = "lemon.android.compose.ext", version = "unspecified" }
 lemon-android-library-compose = { id = "lemon.android.library.compose", version = "unspecified" }
 lemon-android-datastore = { id = "lemon.android.datastore", version = "unspecified" }
-lemon-android-network = { id = "lemon.android.network", version = "unspecified" }
+lemon-android-okhttp = { id = "lemon.android.okhttp", version = "unspecified" }
 lemon-android-room = { id = "lemon.android.room", version = "unspecified" }
 lemon-android-hilt = { id = "lemon.android.hilt", version = "unspecified" }
 lemon-android-kotlin = { id = "lemon.android.kotlin", version = "unspecified" }
@@ -107,7 +107,9 @@ kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutin
 kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinxDatetime" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+okhttp-mock-webserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "okhttp" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidxRoom" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidxRoom" }

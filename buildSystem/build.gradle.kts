@@ -51,9 +51,9 @@ gradlePlugin {
             id = "lemon.android.datastore"
             implementationClass = "io.lemon.android.buildSystem.plugin.DataStorePlugin"
         }
-        register("lemon.android.network") {
-            id = "lemon.android.network"
-            implementationClass = "io.lemon.android.buildSystem.plugin.NetworkPlugin"
+        register("lemon.android.okhttp") {
+            id = "lemon.android.okhttp"
+            implementationClass = "io.lemon.android.buildSystem.plugin.OkhttpPlugin"
         }
         register("lemon.android.room") {
             id = "lemon.android.room"
