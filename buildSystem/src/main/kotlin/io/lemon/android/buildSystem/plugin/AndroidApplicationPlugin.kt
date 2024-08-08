@@ -34,16 +34,18 @@ class AndroidApplicationPlugin : Plugin<Project> {
                 )
 
                 /**
-                 * Write your keystore store configs.
+                 *  Write your keystore store configs.
+                 *
+                 *  signingConfigs {
+                 *     create(RELEASE) {
+                 *         storeFile = file("../your_file_path")
+                 *         storePassword = ""
+                 *         keyAlias = ""
+                 *         keyPassword = ""
+                 *     }
+                 * }
                  */
-                signingConfigs {
-                    create(RELEASE) {
-                        //storeFile = file("../your_file_path")
-                        //storePassword = ""
-                        //keyAlias = ""
-                        //keyPassword = ""
-                    }
-                }
+
 
                 defaultConfig {
                     applicationId = APPLICATION_ID
