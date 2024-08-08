@@ -64,7 +64,12 @@ class AndroidApplicationPlugin : Plugin<Project> {
                         }
 
                         getByName(RELEASE) {
-                            signingConfig = signingConfigs.getByName(RELEASE)
+
+                            /**
+                             * If you have key store file use below line
+                             *
+                             * signingConfig = signingConfigs.getByName(RELEASE)
+                             */
                             isDebuggable = false
                             isMinifyEnabled = true
                             isShrinkResources = true
