@@ -11,7 +11,6 @@ class NetworkPlugin : Plugin<Project> {
             dependencies {
                 add("implementation", versionCatalog.findLibrary("okhttp-logging").get())
                 add("implementation", versionCatalog.findLibrary("retrofit").get())
-                add("implementation", versionCatalog.findLibrary("retrofit-converter-kotlin-serialization").get())
             }
         }
     }
